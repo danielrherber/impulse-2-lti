@@ -14,4 +14,4 @@ close all; clear; clc
 K = @(t) exp(-t);
 
 % generate LTI (A,B,C) system matrices that best approximate provided K
-[A,B,C,opts] = K2LTI(K,[]);
+[A,B,C,opts] = impulse2LTI(K,[]);

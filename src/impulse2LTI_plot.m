@@ -27,7 +27,7 @@ if opts.plot.simulation
     
     % ode tolerances
     options = odeset('RelTol',1e-4,'AbsTol',1e-7);
-    
+
     % simulation with LTI approximation
     [tLTI,yLTI] = ode15s(@(t,y) derivLTI(t,y,A,B,C,u,k),[0 tv(end)*15],zeros(length(A)+2,1),options);
 
@@ -82,7 +82,8 @@ if opts.plot.simulation
     ha.XAxis.Label.FontSize = fontlabel; % change x label font size
     ha.YAxis.Label.FontSize = fontlabel; % change y label font size
     ha.Layer = 'top'; % place the axes on top of the data
-
+    ha.LineWidth = 1; % increase axis line width
+    
 end
 
 %--------------------------------------------------------------------------
@@ -114,7 +115,8 @@ if opts.plot.simulation
     ha.XAxis.Label.FontSize = fontlabel; % change x label font size
     ha.YAxis.Label.FontSize = fontlabel; % change y label font size
     ha.Layer = 'top'; % place the axes on top of the data
-
+    ha.LineWidth = 1; % increase axis line width
+    
     % legend
     hl = legend({'$\dot{y}_{\mathrm{CI}}(t)$','$\dot{y}_{\mathrm{LTI}}(t)$'},'location','Best'); % create legend
     hl.FontSize = fontlegend; % change legend font size
@@ -168,6 +170,7 @@ ha.YAxis.FontSize = fonttick*0.8; % change y tick font size
 ha.XAxis.Label.FontSize = fontlabel*0.8; % change x label font size
 ha.YAxis.Label.FontSize = fontlabel*0.8; % change y label font size
 ha.Layer = 'top'; % place the axes on top of the data
+ha.LineWidth = 1; % increase axis line width
 
 %--------------------------------------------------------------------------
 % long time horizon
@@ -197,9 +200,12 @@ ha.YAxis.FontSize = fonttick; % change y tick font size
 ha.XAxis.Label.FontSize = fontlabel; % change x label font size
 ha.YAxis.Label.FontSize = fontlabel; % change y label font size
 ha.Layer = 'top'; % place the axes on top of the data
+ha.LineWidth = 1; % increase axis line width
 
 % legend
-hl = legend({'Sampled $K(t)$','Fitted $K(t)$'},'location','Best'); % create legend
+hl = legend({'Original $K(t)$',['Fitted $K(t)$ with ',num2str(length(A)),...
+    ' states']},'location','Best'); % create legend
+hl.FontSize = fontlegend; % change legend font size
 hl.FontSize = fontlegend; % change legend font size
 hl.EdgeColor = bcolor; % change the legend border to black (not a dark grey)
 
@@ -231,9 +237,11 @@ ha.YAxis.FontSize = fonttick; % change y tick font size
 ha.XAxis.Label.FontSize = fontlabel; % change x label font size
 ha.YAxis.Label.FontSize = fontlabel; % change y label font size
 ha.Layer = 'top'; % place the axes on top of the data
+ha.LineWidth = 1; % increase axis line width
 
 % legend
-hl = legend({'Sampled $K(t)$','Fitted $K(t)$'},'location','Best'); % create legend
+hl = legend({'Original $K(t)$',['Fitted $K(t)$ with ',num2str(length(A)),...
+    ' states']},'location','Best'); % create legend
 hl.FontSize = fontlegend; % change legend font size
 hl.EdgeColor = bcolor; % change the legend border to black (not a dark grey)
 

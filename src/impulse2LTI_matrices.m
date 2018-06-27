@@ -20,8 +20,8 @@ P = 0; Q = 1;
 
 % sequentially combine the partial fractions; [P*q + p*Q]/(Q*q)
 for k = 1:N
-%     p = [T1(k)*cos(T4(k))  T1(k)*cos(T4(k))*(T2(k)+T3(k)*tan(T4(k)))];
-    p =[T1(k)*cos(T4(k)) T1(k)*(T2(k)*cos(T4(k)) - T3(k)*sin(T4(k)))];
+    % coefficients for the rational function that is to be combined
+    p = [T1(k)*cos(T4(k)) T1(k)*(T2(k)*cos(T4(k)) - T3(k)*sin(T4(k)))];
     q = [1 2*T2(k) (T2(k)^2 + T3(k)^2)];
     
     % products
