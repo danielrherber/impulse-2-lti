@@ -40,7 +40,7 @@ opts.fitting.algorithm = 'patternsearch-lsqnonlin';
 % opts.fitting.algorithm = 'lsqnonlin';
 
 % other options
-opts.points.N = 250; % number of testing points
+opts.points.N = 2000; % number of testing points
 opts.fitting.T3max = 10;
 opts.parallel = true; % parallel computing
 opts.name = 'ex_waves2_ssfitting'; % name of the example

@@ -28,8 +28,8 @@ function INSTALL_impulse2LTI
     AddSubmissionContents(mfilename)
     
     % open an example
-    OpenThisFile('impulse2LTI_ex2')
-	OpenThisFile('impulse2LTI_ex3')
+    OpenThisFile('impulse2LTI_ex_viscoelastic2')
+	OpenThisFile('impulse2LTI_ex_steplike')
     
     % close this file
     CloseThisFile(mfilename) % this will close this file
