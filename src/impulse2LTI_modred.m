@@ -1,20 +1,19 @@
 %--------------------------------------------------------------------------
-% impulse2LTI_modred.m
+% impulse2LTI_modelreduct.m
 % Given a state-space model, perform model reduction to reduce the number
 % of states
 %--------------------------------------------------------------------------
 %
 %--------------------------------------------------------------------------
-% Primary contributor: Daniel R. Herber (danielrherber), University of 
-% Illinois at Urbana-Champaign
-% Project link: https://github.com/danielrherber/impulse-2-lti
+% Primary contributor: Daniel R. Herber (danielrherber)
+% Link: https://github.com/danielrherber/impulse-2-lti
 %--------------------------------------------------------------------------
-function [A,B,C,opts] = impulse2LTI_modred(A,B,C,opts)
+function [A,B,C,D,opts] = impulse2LTI_modred(A,B,C,D,opts)
 % initialize
 continueflag = 1;
 
 % create a state-space model
-sys = ss(A,B,C,[]);
+sys = ss(A,B,C,D);
 
 % reduce states until no more reduction is needed
 while continueflag
@@ -46,9 +45,7 @@ end
 % get modal form
 sys = canon(sys,'modal');
 
-% extract matrices (ignore D since it is 0 or small)
-A = sys.A;
-B = sys.B;
-C = sys.C;
+% extract matrices
+A = sys.A; B = sys.B; C = sys.C; D = sys.D;
 
 end

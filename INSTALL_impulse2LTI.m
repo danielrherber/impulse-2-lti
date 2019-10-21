@@ -1,6 +1,6 @@
 %--------------------------------------------------------------------------
 % INSTALL_impulse2LTI
-% Project link: https://github.com/danielrherber/impulse-2-lti
+% Link: https://github.com/danielrherber/impulse-2-lti
 % This scripts helps you get the impulse2LTI function up and running
 %--------------------------------------------------------------------------
 % Automatically adds project files to your MATLAB path, downloads the
@@ -10,8 +10,8 @@
 % https://github.com/danielrherber/mfx-submission-install-utilities
 % https://www.mathworks.com/matlabcentral/fileexchange/62651
 %--------------------------------------------------------------------------
-% Primary contributor: Daniel R. Herber (danielrherber), University of 
-% Illinois at Urbana-Champaign
+% Primary contributor: Daniel R. Herber (danielrherber)
+% Link: https://github.com/danielrherber/impulse-2-lti
 %--------------------------------------------------------------------------
 function INSTALL_impulse2LTI
 
@@ -80,6 +80,12 @@ function RequiredWebZips
 	zips(ind).url = 'http://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/40397/versions/7/download/zip/mfoldername_v2.zip';
 	zips(ind).folder = 'MFX 40397';
 	zips(ind).test = 'mfoldername';
+    
+    % zip 3
+	ind = ind + 1; % increment
+	zips(ind).url = 'https://github.com/altmany/export_fig/archive/master.zip';
+	zips(ind).folder = 'MFX 23629';
+	zips(ind).test = 'export_fig';
 
     % obtain full function path
     full_fun_path = which(mfilename('fullpath'));

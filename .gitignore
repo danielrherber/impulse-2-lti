@@ -1,0 +1,13 @@
+!.gitignore
+
+# ignore certain file extensions
+*.ini
+*.asv
+*-ABC.mat
+
+# ignore certain folders
+.private*/
+pdf*/
+
+# ignore certain files
+notes.txt
